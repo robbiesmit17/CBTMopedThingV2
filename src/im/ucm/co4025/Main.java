@@ -6,12 +6,15 @@ public class Main {
     //note for self, anything declared in the brackets of a loop only exist in that specific loop
     public static void main(String[] args) {
         Scanner ScannyBoi = new Scanner(System.in);
-        char olderthan17;
-        char validlicense;
-        char validcbt;
+        char olderthan17 = 'z';
+        char validlicense = 'z';
+        char validcbt = 'z';
         do {
-            System.out.print("Are you 17 or older? y/n");
-            olderthan17 = Character.toLowerCase(ScannyBoi.next().charAt(0));
+            try {
+                System.out.print("Are you 17 or older? (y/n) ");
+                olderthan17 = Character.toLowerCase(ScannyBoi.nextLine().charAt(0));
+            } catch (StringIndexOutOfBoundsException e) {
+            }
 
             if (olderthan17 != 'n' && olderthan17 != 'y') {
                 System.out.println("Error: Please enter Yes or No.");
@@ -19,11 +22,12 @@ public class Main {
         } while (olderthan17 != 'n' && olderthan17 != 'y');
         switch (olderthan17) {
             case 'y' -> {
-
                 do {
-                    System.out.print("Do you have a valid provisional license with motorcycle entitlement?");
-                    validlicense = Character.toLowerCase(ScannyBoi.next().charAt(0));
-
+                    try {
+                        System.out.print("Do you have a valid provisional license with motorcycle entitlement? (y/n)");
+                        validlicense = Character.toLowerCase(ScannyBoi.next().charAt(0));
+                    } catch (StringIndexOutOfBoundsException e) {
+                    }
                     if (validlicense != 'n' && validlicense != 'y') {
                         System.out.println("Error: Please enter Yes or No.");
                     }
@@ -31,9 +35,11 @@ public class Main {
                 switch (validlicense) {
                     case 'y' -> {
                         do {
-                            System.out.print("Do you have a valid CBT?");
-                            validcbt = Character.toLowerCase(ScannyBoi.next().charAt(0));
-
+                            try {
+                                System.out.print("Do you have a valid CBT? (y/n)");
+                                validcbt = Character.toLowerCase(ScannyBoi.next().charAt(0));
+                            } catch (StringIndexOutOfBoundsException e) {
+                            }
                             if (validcbt != 'n' && validcbt != 'y') {
                                 System.out.println("Error: Please enter Yes or No.");
                             }
@@ -42,7 +48,6 @@ public class Main {
                             case 'y' -> System.out.println("You can ride an A1 motorcycle with L plates");
                             case 'n' -> System.out.println("You need a valid CBT to ride an A1 motorcycle");
                             default -> System.out.println("Achievement Get! How did we get here?");
-
                         }
                     }
                     case 'n' -> System.out.println("Sorry, you need a valid license with provisional motorcycle entitlement");
@@ -55,7 +60,7 @@ public class Main {
 
 
         // I HAVE EXPERIMENTED WITH THE AUTO FORMAT OPTIONS FROM INTELLIJ
-        validcbt = 'z';
+        /*validcbt = 'z';
         validlicense = 'z';
         olderthan17 = 'Z';
         do {
@@ -100,6 +105,6 @@ public class Main {
             System.out.println("Sorry, you have to be over 17 to ride an A1 light motorcycle.");
         } else {
             System.out.println("Achievement Get! How did we get here?");
-        }
+        }*/
     }
 }
