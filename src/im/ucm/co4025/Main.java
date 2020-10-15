@@ -25,7 +25,7 @@ public class Main {
                 do {
                     try {
                         System.out.print("Do you have a valid provisional license with motorcycle entitlement? (y/n)");
-                        validlicense = Character.toLowerCase(ScannyBoi.next().charAt(0));
+                        validlicense = Character.toLowerCase(ScannyBoi.nextLine().charAt(0));
                     } catch (StringIndexOutOfBoundsException e) {
                     }
                     if (validlicense != 'n' && validlicense != 'y') {
@@ -37,7 +37,7 @@ public class Main {
                         do {
                             try {
                                 System.out.print("Do you have a valid CBT? (y/n)");
-                                validcbt = Character.toLowerCase(ScannyBoi.next().charAt(0));
+                                validcbt = Character.toLowerCase(ScannyBoi.nextLine().charAt(0));
                             } catch (StringIndexOutOfBoundsException e) {
                             }
                             if (validcbt != 'n' && validcbt != 'y') {
@@ -54,7 +54,7 @@ public class Main {
                     default -> System.out.println("Achievement Get! How did we get here?");
                 }
             }
-            case 'n' -> System.out.println("Sorry, you have to be over 17 to ride an A1 light motorcycle.");
+            case 'n' -> System.out.println("Sorry, you have to be over 17 to ride an A1 light motorcycle.\n Part 2 coming soon!(or not, idk)");
             default -> System.out.println("Achievement Get! How did we get here?");
         }
 
