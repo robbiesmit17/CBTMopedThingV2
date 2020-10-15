@@ -21,7 +21,7 @@ public class Main {
             }
         } while (olderthan17 != 'n' && olderthan17 != 'y');
         switch (olderthan17) {
-            case 'y' -> {
+            case 'y' -> {//
                 do {
                     try {
                         System.out.print("Do you have a valid provisional license with motorcycle entitlement? (y/n)");
